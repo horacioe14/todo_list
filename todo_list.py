@@ -24,7 +24,6 @@ class ShowTasks(Tasks):
                 print('Empty list\n')
             if self == 3 and counter == 0:
                 print('No tasks to complete')
-            print('\n')
         except Exception as e_error:
             print('An error occurred: ', e_error)
 
@@ -46,7 +45,6 @@ class AddTask(Tasks):
             stream.write(
                 f'{str(add_uuid)} | {what_task} | {what_deadline} |\n')
             stream.close()
-            print('\n')
         except Exception as e_error:
             print('An error occurred: ', e_error)
 
@@ -70,7 +68,7 @@ class CompleteTask(Tasks):
         '''This method adds tasks to todo_list.txt file'''
 
     
-        remove_task = input('Enter id to complete: ')
+        remove_task = input('\nEnter id to complete: ')
 
         try:
             with open("todo_list.txt", "r+") as f:
@@ -90,7 +88,7 @@ class CompleteTask(Tasks):
 if __name__ == '__main__':
     while True:
         try:
-            print('== TODO LIST ==')
+            print('\n== TODO LIST ==')
             print("[1] show tasks")
             print("[2] add task")
             print("[3] complete task")
